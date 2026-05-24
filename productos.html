@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Productos | JOEL Store</title>
+
+    <link rel="stylesheet" href="productos.css">
+
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+</head>
+
+<body>
+
+    <!-- MENU -->
+
+    <header class="menu">
+
+        <div class="logo">
+            JOEL Store
+        </div>
+
+        <nav>
+
+            <ul>
+
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="productos.html">Productos</a></li>
+                <li><a href="ofertas.html">Ofertas</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+
+            </ul>
+
+        </nav>
+
+        <!-- ICONO CARRITO -->
+
+        <div class="carrito-icono" onclick="abrirCarrito()">
+
+            <i class="fa-solid fa-cart-shopping"></i>
+
+            <span id="contador-carrito">0</span>
+
+        </div>
+
+    </header>
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+        <div class="overlay"></div>
+
+        <div class="hero-texto">
+
+            <h1>PRODUCTOS NIKE</h1>
+
+            <p>
+                Descubre la nueva colección premium.
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- PRODUCTOS -->
+
+    <section class="productos">
+
+        <div class="card">
+
+            <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=1200&auto=format&fit=crop">
+
+            <div class="info">
+
+                <h2>Air Max</h2>
+
+                <p>S/ 499</p>
+
+                <button onclick="agregarCarrito('Air Max',499)">
+                    Comprar
+                </button>
+
+            </div>
+
+        </div>
+
+        <div class="card">
+
+            <img src="https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?q=80&w=1200&auto=format&fit=crop">
+
+            <div class="info">
+
+                <h2>Jordan Retro</h2>
+
+                <p>S/ 699</p>
+
+                <button onclick="agregarCarrito('Jordan Retro',699)">
+                    Comprar
+                </button>
+
+            </div>
+
+        </div>
+
+        <div class="card">
+
+            <img src="https://images.unsplash.com/photo-1543508282-6319a3e2621f?q=80&w=1200&auto=format&fit=crop">
+
+            <div class="info">
+
+                <h2>Nike Dunk</h2>
+
+                <p>S/ 599</p>
+
+                <button onclick="agregarCarrito('Nike Dunk',599)">
+                    Comprar
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- CARRITO -->
+
+    <div class="carrito" id="carrito">
+
+        <div class="carrito-header">
+
+            <h2>Tu Carrito</h2>
+
+            <button onclick="cerrarCarrito()">X</button>
+
+        </div>
+
+        <div id="lista-carrito"></div>
+
+        <div class="carrito-footer">
+
+            <h3>Total: S/ <span id="total">0</span></h3>
+
+            <button class="comprar-final">
+                Finalizar Compra
+            </button>
+
+        </div>
+
+    </div>
+
+    <!-- FOOTER -->
+
+    <footer class="footer">
+
+        <h2>JOEL Store</h2>
+
+        <p>
+            © 2026 Todos los derechos reservados
+        </p>
+
+    </footer>
+
+    <!-- ENLACE JAVASCRIPT -->
+
+    <script src="script.js"></script>
+
+</body>
+</html>

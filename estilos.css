@@ -1,0 +1,687 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background: #111;
+    color: white;
+    overflow-x: hidden;
+}
+
+/* MENU */
+
+.menu{
+    width: 100%;
+    padding: 20px 8%;
+    background: rgba(0,0,0,0.85);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+}
+
+.logo{
+    font-size: 32px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.menu ul{
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.menu ul li a{
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    transition: 0.4s;
+    position: relative;
+}
+
+.menu ul li a::after{
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    background: #ff3c00;
+    left: 0;
+    bottom: -5px;
+    transition: 0.4s;
+}
+
+.menu ul li a:hover::after{
+    width: 100%;
+}
+
+.menu ul li a:hover{
+    color: #ff3c00;
+}
+
+/* HERO */
+
+.hero{
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.slider{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.slide{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    animation: slider 20s infinite;
+}
+
+.slide img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    animation: zoom 20s infinite alternate;
+}
+
+.slide:nth-child(1){
+    animation-delay: 0s;
+}
+
+.slide:nth-child(2){
+    animation-delay: 5s;
+}
+
+.slide:nth-child(3){
+    animation-delay: 10s;
+}
+
+.slide:nth-child(4){
+    animation-delay: 15s;
+}
+
+.overlay{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.55);
+}
+
+.contenido-hero{
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    animation: aparecer 1.5s ease;
+}
+
+.contenido-hero h1{
+    font-size: 85px;
+    margin-bottom: 20px;
+    letter-spacing: 3px;
+}
+
+.contenido-hero p{
+    font-size: 24px;
+    margin-bottom: 35px;
+}
+
+/* BOTON HERO */
+
+.contenido-hero button{
+    padding: 18px 45px;
+    border: none;
+    border-radius: 50px;
+    background: linear-gradient(135deg,#ff3c00,#ff7b00);
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.4s;
+    box-shadow: 0px 10px 25px rgba(255,60,0,0.4);
+    position: relative;
+    overflow: hidden;
+}
+
+.contenido-hero button::before{
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 100%;
+    background: rgba(255,255,255,0.2);
+    top: 0;
+    left: 0;
+    transition: 0.5s;
+}
+
+.contenido-hero button:hover::before{
+    width: 100%;
+}
+
+.contenido-hero button:hover{
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0px 15px 35px rgba(255,60,0,0.6);
+}
+
+/* PRODUCTOS */
+
+.productos{
+    padding: 100px 8%;
+}
+
+.productos h2{
+    text-align: center;
+    font-size: 55px;
+    margin-bottom: 50px;
+}
+
+.contenedor-productos{
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.card{
+    width: 320px;
+    background: #1a1a1a;
+    border-radius: 25px;
+    overflow: hidden;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+.card:hover{
+    transform: translateY(-10px);
+    box-shadow: 0px 10px 35px rgba(255,255,255,0.15);
+}
+
+.card img{
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+    transition: 0.5s;
+}
+
+.card:hover img{
+    transform: scale(1.08);
+}
+
+.info{
+    padding: 20px;
+}
+
+.info h3{
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.info p{
+    font-size: 22px;
+    color: #ff3c00;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+/* BOTON PRODUCTOS */
+
+.info button{
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 40px;
+    background: white;
+    color: black;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+.info button:hover{
+    background: #ff3c00;
+    color: white;
+    transform: scale(1.05);
+    box-shadow: 0px 10px 25px rgba(255,60,0,0.5);
+}
+
+/* RECIENTE */
+
+.reciente{
+    padding: 100px 8%;
+    background: #151515;
+}
+
+.reciente h2{
+    text-align: center;
+    font-size: 55px;
+    margin-bottom: 50px;
+}
+
+.contenedor-reciente{
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.reciente-card{
+    width: 350px;
+    background: #1f1f1f;
+    border-radius: 25px;
+    overflow: hidden;
+    transition: 0.5s;
+}
+
+.reciente-card:hover{
+    transform: translateY(-10px);
+}
+
+.reciente-card img{
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    transition: 0.5s;
+}
+
+.reciente-card:hover img{
+    transform: scale(1.08);
+}
+
+.texto{
+    padding: 20px;
+}
+
+.texto h3{
+    margin-bottom: 10px;
+    font-size: 28px;
+}
+
+/* MARATON */
+
+.maraton{
+    height: 85vh;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    padding: 0 8%;
+}
+
+.maraton-slider{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.maraton-slide{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    animation: cambiarMaraton 16s infinite;
+}
+
+.maraton-slide img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    animation: zoomMaraton 16s infinite alternate;
+}
+
+.maraton-slide:nth-child(1){
+    animation-delay: 0s;
+}
+
+.maraton-slide:nth-child(2){
+    animation-delay: 4s;
+}
+
+.maraton-slide:nth-child(3){
+    animation-delay: 8s;
+}
+
+.maraton-slide:nth-child(4){
+    animation-delay: 12s;
+}
+
+.maraton::after{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.55);
+}
+
+.maraton-texto{
+    position: relative;
+    z-index: 2;
+    max-width: 600px;
+}
+
+.maraton-texto h2{
+    font-size: 65px;
+    margin-bottom: 25px;
+}
+
+.maraton-texto p{
+    font-size: 22px;
+    margin-bottom: 35px;
+    color: #ddd;
+}
+
+/* BOTON MARATON */
+
+.maraton-texto button{
+    padding: 18px 45px;
+    border: none;
+    border-radius: 50px;
+    background: linear-gradient(135deg,#ff3c00,#ff7b00);
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.4s;
+    box-shadow: 0px 10px 25px rgba(255,60,0,0.4);
+    position: relative;
+    overflow: hidden;
+}
+
+.maraton-texto button::before{
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 100%;
+    background: rgba(255,255,255,0.2);
+    top: 0;
+    left: 0;
+    transition: 0.5s;
+}
+
+.maraton-texto button:hover::before{
+    width: 100%;
+}
+
+.maraton-texto button:hover{
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0px 15px 35px rgba(255,60,0,0.6);
+}
+
+/* MODA */
+
+.moda{
+    padding: 100px 8%;
+}
+
+.moda h2{
+    text-align: center;
+    font-size: 55px;
+    margin-bottom: 50px;
+}
+
+.moda-contenedor{
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.moda-card{
+    width: 350px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 25px;
+}
+
+.moda-card img{
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+    transition: 0.6s;
+}
+
+.moda-card:hover img{
+    transform: scale(1.1);
+}
+
+.moda-card h3{
+    position: absolute;
+    bottom: 30px;
+    left: 30px;
+    z-index: 2;
+    font-size: 35px;
+}
+
+.moda-card::before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+    z-index: 1;
+}
+
+/* ABANICO */
+
+.abanico-section{
+    padding: 100px 8%;
+    background: #0f0f0f;
+}
+
+.abanico-section h2{
+    text-align: center;
+    font-size: 55px;
+    margin-bottom: 50px;
+}
+
+.abanico{
+    display: flex;
+    width: 100%;
+    height: 500px;
+    gap: 10px;
+}
+
+.panel{
+    flex: 1;
+    overflow: hidden;
+    border-radius: 25px;
+    position: relative;
+    transition: 0.6s ease;
+    cursor: pointer;
+}
+
+.panel:hover{
+    flex: 5;
+}
+
+.panel img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.6s;
+}
+
+.panel:hover img{
+    transform: scale(1.1);
+}
+
+.panel h3{
+    position: absolute;
+    bottom: 30px;
+    left: 30px;
+    font-size: 35px;
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.panel:hover h3{
+    opacity: 1;
+}
+
+/* FOOTER */
+
+.footer{
+    background: black;
+    text-align: center;
+    padding: 40px;
+}
+
+.footer h2{
+    margin-bottom: 15px;
+}
+
+.footer p{
+    color: #aaa;
+    margin-bottom: 20px;
+}
+
+.redes i{
+    font-size: 30px;
+    margin: 0 10px;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+.redes i:hover{
+    color: #ff3c00;
+    transform: scale(1.2);
+}
+
+/* ANIMACIONES */
+
+@keyframes slider{
+
+    0%{
+        opacity: 0;
+    }
+
+    5%{
+        opacity: 1;
+    }
+
+    25%{
+        opacity: 1;
+    }
+
+    30%{
+        opacity: 0;
+    }
+
+    100%{
+        opacity: 0;
+    }
+
+}
+
+@keyframes cambiarMaraton{
+
+    0%{
+        opacity: 0;
+    }
+
+    5%{
+        opacity: 1;
+    }
+
+    25%{
+        opacity: 1;
+    }
+
+    30%{
+        opacity: 0;
+    }
+
+    100%{
+        opacity: 0;
+    }
+
+}
+
+@keyframes zoom{
+
+    from{
+        transform: scale(1);
+    }
+
+    to{
+        transform: scale(1.1);
+    }
+
+}
+
+@keyframes zoomMaraton{
+
+    from{
+        transform: scale(1);
+    }
+
+    to{
+        transform: scale(1.12);
+    }
+
+}
+
+@keyframes aparecer{
+
+    from{
+        opacity: 0;
+        transform: translateY(50px);
+    }
+
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+/* RESPONSIVE */
+
+@media(max-width:900px){
+
+    .menu{
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .menu ul{
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .contenido-hero h1{
+        font-size: 45px;
+    }
+
+    .productos h2,
+    .reciente h2,
+    .moda h2,
+    .abanico-section h2{
+        font-size: 40px;
+    }
+
+    .maraton-texto h2{
+        font-size: 45px;
+    }
+
+    .abanico{
+        flex-direction: column;
+        height: auto;
+    }
+
+    .panel{
+        height: 250px;
+    }
+
+}

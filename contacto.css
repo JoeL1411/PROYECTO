@@ -1,0 +1,223 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background: #111;
+    color: white;
+}
+
+/* MENU */
+
+.menu{
+    width: 100%;
+    padding: 20px 8%;
+    background: rgba(0,0,0,0.8);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+}
+
+.logo{
+    font-size: 30px;
+    font-weight: bold;
+    color: white;
+}
+
+.menu ul{
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.menu ul li a{
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    transition: 0.3s;
+}
+
+.menu ul li a:hover{
+    color: #ff3c00;
+}
+
+/* CONTACTO */
+
+.contacto{
+    min-height: 100vh;
+    background-image: url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1400&auto=format&fit=crop');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 120px 20px;
+}
+
+.overlay{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+}
+
+form{
+    position: relative;
+    z-index: 2;
+    width: 450px;
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(10px);
+    padding: 40px;
+    border-radius: 25px;
+    animation: aparecer 1.5s ease;
+}
+
+form h1{
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 40px;
+}
+
+input,
+textarea{
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+}
+
+textarea{
+    height: 150px;
+    resize: none;
+}
+
+button{
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 18px;
+    background: white;
+    transition: 0.4s;
+}
+
+button:hover{
+    background: #ff3c00;
+    color: white;
+}
+
+/* WHATSAPP */
+
+.whatsapp{
+    position: fixed;
+    width: 75px;
+    height: 75px;
+    background: #25d366;
+    right: 30px;
+    bottom: 30px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    z-index: 999;
+    box-shadow: 0px 0px 25px rgba(37,211,102,0.7);
+    animation: flotar 2s infinite;
+    transition: 0.4s;
+}
+
+.whatsapp:hover{
+    transform: scale(1.1);
+}
+
+.whatsapp i{
+    color: white;
+    font-size: 42px;
+}
+
+/* FOOTER */
+
+.footer{
+    background: black;
+    text-align: center;
+    padding: 40px;
+}
+
+.footer p{
+    margin: 20px 0;
+    color: #aaa;
+}
+
+.redes i{
+    font-size: 30px;
+    margin: 10px;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+.redes i:hover{
+    color: #ff3c00;
+    transform: scale(1.2);
+}
+
+/* ANIMACIONES */
+
+@keyframes aparecer{
+
+    from{
+        opacity: 0;
+        transform: translateY(60px);
+    }
+
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+@keyframes flotar{
+
+    0%{
+        transform: translateY(0);
+    }
+
+    50%{
+        transform: translateY(-10px);
+    }
+
+    100%{
+        transform: translateY(0);
+    }
+
+}
+
+/* RESPONSIVE */
+
+@media(max-width:900px){
+
+    .menu{
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .menu ul{
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    form{
+        width: 100%;
+    }
+
+}
